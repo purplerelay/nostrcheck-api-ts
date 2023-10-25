@@ -41,7 +41,7 @@ NODE_MAJOR=18
 HOST="nostcheck.me"
 DB="nostrcheck"
 USER="nostrcheck"
-MEDIAPATH="media/"
+MEDIAPATH="/media/"
 
 # We ask user if want to continue
 echo "Do you want to proceed with the installation? [y/n]"
@@ -223,39 +223,39 @@ echo "Restarting nginx..."
 echo ""
 sudo service nginx restart
 
-# # Create systemd service
-# echo ""
-# echo "Creating systemd service..."
-# echo ""
+# Create systemd service
+echo ""
+echo "Creating systemd service..."
+echo ""
 
-# cat > /etc/systemd/system/nostrcheck.service <<EOF
-# [Unit]
-# Description=Nostrcheck server
-# After=network.target
+cat > /etc/systemd/system/nostrcheck.service <<EOF
+[Unit]
+Description=NOSTRAGE server
+After=network.target
 
-# [Service]
-# Type=simple
-# User=$SUDO_USER
-# WorkingDirectory=$BASEDIR/nostrcheck-api-ts
-# ExecStart=/usr/bin/npm run start
-# Restart=on-failure
+[Service]
+Type=simple
+User=$SUDO_USER
+WorkingDirectory=$BASEDIR/nostrcheck-api-ts
+ExecStart=/usr/bin/npm run start
+Restart=on-failure
 
-# [Install]
-# WantedBy=multi-user.target
-# Alias=nostrcheck.service
-# EOF
+[Install]
+WantedBy=multi-user.target
+Alias=nostrcheck.service
+EOF
 
-# # Enable the service
-# echo ""
-# echo "Enabling systemd service..."
-# echo ""
-# sudo systemctl enable nostrcheck.service
+# Enable the service
+echo ""
+echo "Enabling systemd service..."
+echo ""
+sudo systemctl enable nostrcheck.service
 
-# # Start the service
-# echo ""
-# echo "Starting systemd service..."
-# echo ""
-# systemctl start nostrcheck.service
+# Start the service
+echo ""
+echo "Starting systemd service..."
+echo ""
+systemctl start nostrcheck.service
 
 # End of standard installation
 echo "Installation complete!"
