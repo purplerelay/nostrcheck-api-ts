@@ -38,7 +38,7 @@ echo ""
 NODE_MAJOR=18
 
 # Database variables
-HOST="nostcheck.me"
+HOST="nostrage.com"
 DB="nostrcheck"
 USER="nostrcheck"
 MEDIAPATH="/media/"
