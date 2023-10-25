@@ -68,7 +68,7 @@ sudo apt-get install nodejs -y
 # Install necessary packages
 echo ""
 echo "Installing necessary packages..."
-sudo apt install nginx git redis-server mariadb-server mariadb-client ffmpeg jq certbot python3-certbot-nginx -y
+sudo apt install nginx git redis-server mariadb-server mariadb-client ffmpeg jq certbot python3-certbot-nginx nfs-common -y
 
 # Clone the repository
 echo ""
